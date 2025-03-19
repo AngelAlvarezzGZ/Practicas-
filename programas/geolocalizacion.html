@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOLOCALIZACION HTML 5</title>
+</head>
+<body>
+    <H1>GEOLOCALIZACION EN HTML</H1>
+    <button onclick="getlocation()">obtener mi ubicacion</button>
+    <p id="location"></p>
+
+     <script>
+        funcion getlocation(){
+            if (navegador.getlocation) {
+                navegador.getlocation.getCurrentPosition(showPosition);
+            }else{
+                document.getElementById("location").innerHTML=
+                "Geolocalizacion no sorportada por este navegador.";
+            }
+        }
+
+    function showPosition(position){
+        document.getElementById("location").innerHTML="latitud:"+
+        position.coords.latitude +
+        "<br>longuitud:" + position.coords.longitude;
+    }
+     </script>
+</body>
+</html>
